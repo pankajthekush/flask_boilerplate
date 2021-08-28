@@ -25,8 +25,8 @@ def login():
 
     if form.validate_on_submit():
         user = Users.query.filter_by(email=form.email.data).first()
-        if user is None or check_password_hash(user.password ,form.password.data):
-            login_user(user=user)
+        if (user is not None) and check_password_hash(user.password ,form.password.data):
+            login_user(user=user, remember=True)
             return 'success'
         else:
             return 'fail'
