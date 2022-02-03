@@ -15,6 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = PG_CONN_STR
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # change secrect key
-app.config['SECRET_KEY'] = 'b7e165096c2d422fa49c10f02425f477'
+
+app.config['SECRET_KEY'] = os.environ['SECRECT_KEY']
 
 db = SQLAlchemy(app)

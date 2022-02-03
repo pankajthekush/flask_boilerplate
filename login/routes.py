@@ -14,7 +14,7 @@ login_manager.init_app(app=app)
 
 @login_manager.user_loader
 def user_loader(id):
-    return Users.get(int(id))
+    return Users.query.get(int(id))
 
 api_login = Blueprint('login',__name__)
 
