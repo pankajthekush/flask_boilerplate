@@ -6,6 +6,9 @@ helper function to do database stuff which do not have to do anything with sqlal
 
 
 def get_pg_conn_str():
+
+    return 'sqlite:///locdb.db'
+
     """
         returns postgres connection string , access values from env variables
         if not found ask user
